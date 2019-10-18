@@ -9,3 +9,5 @@ exports.formularioProyecto = (req, res) => {
 		nombrePagina: 'Nuevo Proyecto'
 	});
 };
+
+exports.nuevoProyecto = (req, res) => {};
