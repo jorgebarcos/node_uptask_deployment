@@ -2,7 +2,8 @@ const express = require('express');
 const routes = require('./routes');
 const path = require('path');
 const bodyParser = require('body-parser');
-const expressValidator = require('express-validator');
+// const slug = require('slug');
+// const expressValidator = require('express-validator');
 
 // helpers con algunas funciones
 const helpers = require('./helpers');
