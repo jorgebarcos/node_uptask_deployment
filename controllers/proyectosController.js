@@ -42,3 +42,5 @@ exports.nuevoProyecto = async (req, res) => {
 		res.redirect('/');
 	}
 };
+
+exports.proyectoPorUrl = (req, res) => {};
