@@ -56,7 +56,7 @@ exports.proyectoPorUrl = async (req, res, next) => {
 		}
 	});
 
-	const [ proyectos, proyecto ] = await Promise.all([ proyectosPromise, proyectosPromise ]);
+	const [ proyectos, proyecto ] = await Promise.all([ proyectosPromise, proyectoPromise ]);
 
 	if (!proyecto) return next();
 
@@ -73,11 +73,11 @@ exports.formularioEditar = async (req, res) => {
 
 	const proyectoPromise = Proyectos.findOne({
 		where: {
-			url: req.params.id
+			id: req.params.id
 		}
 	});
 
-	const [ proyectos, proyecto ] = await Promise.all([ proyectosPromise, proyectosPromise ]);
+	const [ proyectos, proyecto ] = await Promise.all([ proyectosPromise, proyectoPromise ]);
 
 	// render a la vista
 	res.render('nuevoProyecto', {
