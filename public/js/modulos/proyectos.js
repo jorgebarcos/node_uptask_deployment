@@ -44,6 +44,5 @@ if (btnEliminar) {
 		});
 	});
 }
-ñ;
 
 export default btnEliminar;
