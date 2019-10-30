@@ -12,9 +12,9 @@ const Proyectos = db.define(
 			autoIncrement: true
 		},
 
-		nombre: Sequelize.STRING,
+		nombre: Sequelize.STRING(100),
 
-		url: Sequelize.STRING
+		url: Sequelize.STRING(100)
 	},
 	{
 		hooks: {
