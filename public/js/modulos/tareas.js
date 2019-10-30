@@ -12,7 +12,9 @@ if (tareas) {
 			const url = `${location.origin}/tareas/${idTarea}`;
 
 			axios.patch(url, { idTarea }).then((respuesta) => {
-				console.log(respuesta);
+				if (respuesta.status === 200) {
+					icono.classList.toggle('completo');
+				}
 			});
 		}
 	});
