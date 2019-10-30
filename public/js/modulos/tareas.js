@@ -36,7 +36,13 @@ if (tareas) {
 					const url = `${location.origin}/tareas/${idTarea}`;
 					// enviar el delete por medio de axios
 					axios.delete(url, { params: { idTarea } }).then((respuesta) => {
-						console.log(respuesta);
+						if (respuesta.status === 200) {
+							// Eliminar el Nodo
+							tareaHTML.parentElement.removeChild(tareaHTML);
+
+							// Opcional alerta
+							Swal.fire('Tarea Eliminada', respuesta.data, 'success');
+						}
 					});
 				}
 			});
