@@ -6,6 +6,7 @@ const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const passport = require('./config/passport');
 
 // const slug = require('slug');
 // const expressValidator = require('express-validator');
@@ -54,6 +55,9 @@ app.use(
 		saveUninitialized: false
 	})
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // pasar var dump a la aplicacion
 app.use((req, res, next) => {
