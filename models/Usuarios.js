@@ -4,7 +4,7 @@ const Proyectos = require('../models/Proyectos');
 const bcrypt = require('bcrypt-nodejs');
 
 const Usuarios = db.define(
-	'usuario',
+	'usuarios',
 	{
 		id: {
 			type: Sequelize.INTEGER,
@@ -19,12 +19,12 @@ const Usuarios = db.define(
 					msg: 'Agrega un Correo Válido'
 				},
 				notEmpty: {
-					mgs: 'El e-mail no puede ir vacio'
+					msg: 'El e-mail no puede ir vacio'
 				}
 			},
 			unique: {
 				args: true,
-				mgs: 'Usuario Ya Registrado'
+				msg: 'Usuario Ya Registrado'
 			}
 		},
 		password: {
@@ -32,7 +32,7 @@ const Usuarios = db.define(
 			allowNull: false,
 			validate: {
 				notEmpty: {
-					mgs: 'El password no puede ir vacio'
+					msg: 'El password no puede ir vacio'
 				}
 			}
 		}

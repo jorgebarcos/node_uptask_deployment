@@ -1,10 +1,10 @@
+const Usuarios = require('../models/Usuarios');
+
 exports.formCrearCuenta = (req, res) => {
 	res.render('crearCuenta', {
 		nombrePagina: 'Crear Cuenta en Uptask'
 	});
 };
-
-const Usuarios = require('../models/Usuarios');
 
 exports.crearCuenta = async (req, res) => {
 	// Leer los datos
@@ -19,7 +19,7 @@ exports.crearCuenta = async (req, res) => {
 		res.redirect('/iniciar-sesion');
 	} catch (error) {
 		res.render('crearCuenta', {
-			error: error.errors,
+			errores: error.errors,
 			nombrePagina: 'Crear Cuenta en Uptask'
 		});
 	}
