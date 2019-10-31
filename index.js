@@ -2,7 +2,7 @@ const express = require('express');
 const routes = require('./routes');
 const path = require('path');
 const bodyParser = require('body-parser');
-// const expressValidator = require('express-validator');
+const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 
 // const slug = require('slug');
@@ -28,7 +28,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Agregamos express validator a toda la aplicacio
-// app.use(expressValidator());
+app.use(expressValidator());
 
 // Donde cargar los archivos estaticos
 app.use(express.static('public'));

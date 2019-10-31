@@ -19,7 +19,7 @@ const Usuarios = db.define(
 					msg: 'Agrega un Correo Válido'
 				},
 				notEmpty: {
-					mgs: 'El password no puede ir vacio'
+					mgs: 'El e-mail no puede ir vacio'
 				}
 			},
 			unique: {
