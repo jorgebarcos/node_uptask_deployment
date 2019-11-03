@@ -21,13 +21,19 @@ async function main() {
 		}
 	});
 
+	// generar html
+	const generarHTML = () => {
+		const html = pug.renderFile(`${__dirname}/../views/emails/reestablecer-password.pug`);
+		return juice(html);
+	};
+
 	// send mail with defined transport object
 	let info = await transporter.sendMail({
 		from: '"UpTask" <no-reply@uptask.com>', // sender address
 		to: 'correo@correo.com', // list of receivers
 		subject: 'Password Reset', // Subject line
 		text: 'Hola', // plain text body
-		html: '<b>Hola</b>' // html body
+		html: generarHTML() // html body
 	});
 
 	console.log('Message sent: %s', info.messageId);
