@@ -62,3 +62,24 @@ exports.formRestablecerPassword = (req, res) => {
 		nombrePagina: 'Reestablecer tu Contraseña'
 	});
 };
+
+// Cambia el estado de una cuenta
+exports.confirmarCuenta = async (req, res) => {
+	const usuario = await Usuarios.findOne({
+		where: {
+			email: req.params.correo
+		}
+	});
+
+	// Si no existe el usuario
+	if (!usuario) {
+		req.flash('error', 'No valido');
+		res.redirect('/crear-cuenta');
+	}
+
+	usuario.activo = 1;
+	await usuario.save();
+
+	req.flash('correcto', 'Cuenta activda correctamente');
+	res.redirect('/iniciar-sesion');
+};
