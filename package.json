@@ -1,7 +1,7 @@
 {
 	"name": "uptasknodejs",
 	"version": "1.0.0",
-	"description": "Proyecto UpTasl con Node y MVC",
+	"description": "Proyecto UpTask con Node y MVC",
 	"main": "index.js",
 	"scripts": {
 		"desarrollo": "concurrently \"npm run dev \" \"npm run watch \" ",
