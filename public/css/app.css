@@ -344,3 +344,8 @@ form input[type="submit"] {
 	text-align: center;
 	display: block;
 }
+
+
+p.test {
+	color: black;
+}
